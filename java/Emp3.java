@@ -68,7 +68,7 @@ class Clerk
 	}
 }
 
-class Emp
+class Emp3
 {
 	public static void main(String args[])
 	{

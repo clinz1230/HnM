@@ -1,5 +1,5 @@
 
-// Create an Employee Class with features
+// Create an Emp Class with features
 // Create Classes [ Developer, Tester, Manager, Clerk ] that extends Emp Class 
 
 import java.util.Scanner;

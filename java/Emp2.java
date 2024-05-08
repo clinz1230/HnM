@@ -1,4 +1,5 @@
 
+//Adding function for display and raise salary
 
 import java.util.Scanner;
 
@@ -6,70 +7,87 @@ abstract class Emp
 {
 	int id,age;
 	String name;
-	int salary;
-	String desig;
+	float salary;
+	String des;
 	Emp()
 	{
 		Scanner sc= new Scanner(System.in);
 		System.out.println(" Enter ID : ");
-		 id=sc.nextInt();
+		id=sc.nextInt();
 		System.out.println(" Enter Name : ");
-		 name=sc.next();
+		name=sc.next();
 		System.out.println(" Enter Age : ");
-		 age=sc.nextInt();			
+		age=sc.nextInt();			
 	}
 	public void display()
 	{
-		System.out.println(" Hi ID "+id);	
-		System.out.println(" My Name : "+name);	
-		System.out.println(" Hi AGE "+age);	
-		System.out.println(" My Salary : "+salary);		
-		System.out.println(" My Designation : "+desig);	
+		System.out.println(" ID "+id);	
+		System.out.println(" Name : "+name);	
+		System.out.println(" Age "+age);	
+		System.out.println(" Salary : "+salary);		
+		System.out.println(" Designation : "+des);	
 	}
-	public abstract  void raiseSalry();
+	abstract void raiseSalary();
 
 }
 class Manager extends Emp
 {	
 	Manager()
 	{
-		salary=800000;
-		desig="Manager";
+		salary = 800000;
+		des = "Manager";
+	}
+	void raiseSalary()
+	{
+		salary = (float)(salary * 1.1);
 	}
 }
 class Tester extends Emp
 {
-	
-	int salary=300000;
-	String desig="Tester";
 	Tester()
 	{
+		salary = 300000;
+		des = "Tester";
 	}		
+	void raiseSalary()
+	{
+		salary = (float)(salary * 1.1);
+	}
 }
 class Dev extends Emp
 {
-	int salary=60000;
-	String desig="Developer";
 	Dev()
 	{
+		salary = 60000;
+		des = "Developer";
 	}	
+	void raiseSalary()
+	{
+		salary = (float)(salary * 1.1);
+	}
 }
 class Clerk extends Emp
 {
-	
-	int salary=20000;
-	String desig="Clerk";
 	Clerk()
-	{	
+	{
+		salary = 20000;
+		des = "Clerk";	
 	}	
+	void raiseSalary()
+	{
+		salary = (float)(salary * 1.1);
+	}
 }	
 
-public class Demo10
+public class Emp2
 {
 	public static void main(String args[])
 	{
 		int ch1,ch2=0;
-		Tester t=null;
+		Tester t = null;
+		Dev d = null;
+		Manager m = null;
+		Clerk c = null;
 		do{
 			System.out.println("1) Create");
 			System.out.println("2) Display");
@@ -87,48 +105,49 @@ public class Demo10
 					System.out.println("2) Clerk");
 					System.out.println("3) Manager");
 					System.out.println("4) Tester");
-
-					System.out.println("3) Exit");
-
+					System.out.println("5) Exit");
 					System.out.print("Enter the choice :");
 			 		ch2= sc.nextInt();
 		
 					if(ch2==1)
 					{
-						Dev d = new Dev();
+						 d = new Dev();
 					}
 					if(ch2==2)
 					{
-						Clerk c = new Clerk();
+						 c = new Clerk();
 					}
 					if(ch2==3)
 					{
-						Manager m = new Manager();
+						 m = new Manager();
 					}
 					if(ch2==4)
 					{
-						t = new Tester();
+						 t = new Tester();
 					}
 				}while(ch1!=4);	
 			}
 			if(ch1==2)
 			{
-				t.display();			
+				System.out.println("Display!");
+				t.display();
+				d.display();
+				m.display();
+				c.display();
 			}
 			if(ch1==3)
 			{
-					System.out.println("Raise Salary .............!");
-					10 % ;
-					t.raiseSalry();
+				System.out.println("Raise Salary .............!");
+				t.raiseSalary();
+				d.raiseSalary();
+				m.raiseSalary();
+				c.raiseSalary();
 			}
 			if(ch1==4)
 			{
 				System.out.println("Thank You");
 				System.exit(0);
 			}
-
-		}while(ch1!=4);
-		
+		}while(ch1!=4);		
 	}
 }
-

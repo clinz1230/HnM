@@ -1,33 +1,23 @@
-class A
+
+// Showing working of static member and functions in a class
+
+class A 
 {
-    A()
+    static int x = 1000;
+    static void display()
     {
-        System.out.println("A()");
-    }
-    A(int a)
-    {
-        System.out.println("A(int a)");
-        System.out.println(a);
-    }
-    A(int a, int b)
-    {
-        System.out.println("A(int a, int b)");   
-        System.out.println(a+","+b);     
-    }
-    A(String a, int b)
-    {
-        System.out.println("A(String a, int b)");
-        System.out.println(a+" , "+b);     
+        System.out.println("Hi Display!");
     }
 }
-
-public class Demo2
+public class Demo2 
 {
-    public static void main(String args[]) 
+    public static void main(String args[])
     {
         A a = new A();
-        A a1 = new A(100);
-        A a2 = new A(100,200);
-        A a3 = new A("Clinz", 100);    
-    }
+        A.display();
+        System.out.println(A.x);
+        // a.x = 2000;
+        // a.display();
+        // System.out.println(a.x);
+    }    
 }

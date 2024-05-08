@@ -1,18 +1,45 @@
-class A 
+
+//Showing working of abstract class
+
+abstract class Bank
 {
-    static int x = 1000;
-    static void display()
+    abstract void ATM();
+    abstract void KYC();
+}
+
+class SBI extends Bank
+{
+    void ATM()
     {
-        System.out.println("Hi Display!");
+        System.out.println("500000");
+    }
+    void KYC()
+    {
+        System.out.println("KYC");
     }
 }
-public class Demo3 
+class Axis extends Bank
 {
-    public static void main(String args[])
+    void ATM()
     {
-        A a = new A();
-        a.display();
-        System.out.println(A.x);
-        A.display();
+        System.out.println("25000");
+    }
+    void KYC()
+    {
+        System.out.println("KYC");
+    }
+}
+public class Demo3
+{
+    public static void main(String args[]) 
+    {
+        SBI s = new SBI();
+        s.ATM();
+        s.KYC();
+        //System.out.println("SBI:"+s.roi());
+        Axis a = new Axis();
+        a.ATM();
+        a.KYC();
+        //System.out.println("Axis:"+a.roi());
     }    
 }

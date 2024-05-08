@@ -1,42 +1,43 @@
-abstract class Bank
-{
-    abstract void ATM();
-    abstract void KYC();
-}
 
-class SBI extends Bank
+// Functioning of keyword super and method overriding 
+
+class P 
 {
-    void ATM()
-    {
-        System.out.println("500000");
-    }
-    void KYC()
-    {
-        System.out.println("KYC");
-    }
+	int money = 200000;
+	String car = "BMW";
+	int site = 5; 
+	
+	void use()
+	{
+        System.out.println(" Class P ");
+		System.out.println(" Class P Money :"+money);
+		System.out.println(" Class P Car :"+car);
+		System.out.println(" Class P Site :"+site);
+	}
 }
-class Axis extends Bank
+class C  extends  P 
 {
-    void ATM()
-    {
-        System.out.println("25000");
-    }
-    void KYC()
-    {
-        System.out.println("KYC");
-    }
+	int money = 100000;
+    String car = "Benz";
+	int site = 15; 
+	void use()
+	{
+        super.use();
+        System.out.println(" Class C ");
+		System.out.println(" Money :"+ money);
+		System.out.println(" Parent Money :"+ super.money);
+		System.out.println(" Car :"+ car);
+        System.out.println(" Parent Car :"+ super.car);
+		System.out.println(" Site :"+ site);
+		System.out.println(" Parent Site :"+ super.site);
+	}
 }
 public class Demo4
 {
-    public static void main(String args[]) 
-    {
-        SBI s = new SBI();
-        s.ATM();
-        s.KYC();
-        //System.out.println("SBI:"+s.roi());
-        Axis a = new Axis();
-        a.ATM();
-        a.KYC();
-        //System.out.println("Axis:"+a.roi());
-    }    
+	public static void main(String args[])
+	{
+		C c = new C();
+		c.use();
+	}
 }
+
