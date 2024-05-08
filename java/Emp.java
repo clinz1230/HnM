@@ -1,3 +1,7 @@
+
+// Create Classes [Dev , Clerk]
+// Add values using its constructor
+
 import java.util.Scanner;
 class Dev
 {
@@ -64,14 +68,14 @@ class Clerk
 	}
 }
 
-class Demo
+class Emp
 {
 	public static void main(String args[])
 	{
 		int ch = 0;
 		do{
 			Scanner sc = new Scanner(System.in);
-			System.out.println("Demo Class");
+			System.out.println("Emp Class");
 			System.out.println("==========");
 			System.out.println("1.Developer");
 			System.out.println("2.Clerk");
